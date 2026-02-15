@@ -11,7 +11,7 @@ const STORAGE_KEY = "rinjani4d_claimed_users";
 
 let claimedUsers = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-// generate history tampilan
+// history (lebih dari 5, tapi di-scroll)
 function loadHistory() {
   historyList.innerHTML = "";
   for (let i = 0; i < 15; i++) {
@@ -21,7 +21,6 @@ function loadHistory() {
     historyList.appendChild(li);
   }
 }
-
 loadHistory();
 
 claimBtn.addEventListener("click", () => {
