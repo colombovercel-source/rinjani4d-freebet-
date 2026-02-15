@@ -2,38 +2,58 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>RINJANI4D - Klaim Bonus Member Baru</title>
+  <title>RINJANI4D - Claim Bonus Member Baru</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app">
-    <header class="header">
-      <h1>RINJANI4D</h1>
-      <p>Klaim Bonus Freebet Member Baru</p>
-    </header>
+<!-- Background Angpao -->
+<div class="scene" id="scene"></div>
 
-    <section class="card">
-      <label>User ID</label>
-      <input type="text" id="userId" placeholder="Masukkan User ID">
-      <button id="claimBtn">Cek Bonus</button>
-      <div id="infoMessage"></div>
-    </section>
+<div class="app">
 
-    <section class="card hidden" id="bonusBox">
-      <h3>Bonus Anda</h3>
-      <div class="bonus-amount" id="bonusAmount"></div>
-      <p class="note">Berlaku selama 24 jam</p>
-      <button id="csBtn">Hubungi CS</button>
-    </section>
+  <header>
+    <h1>RINJANI4D</h1>
+    <p class="status">🟢 Status Sistem: Aktif & Normal</p>
+  </header>
 
-    <section class="history">
-      <h4>Aktivitas Bonus Terbaru</h4>
-      <ul id="historyList"></ul>
-    </section>
+  <section class="card">
+    <h2>Bonus Member Baru</h2>
+    <p class="desc">Klaim bonus eksklusif khusus pendaftaran baru</p>
+
+    <div class="angpao-box" id="angpaoBox">
+      <div class="angpao" id="angpao"></div>
+    </div>
+
+    <button id="claimBtn">Cek Bonus</button>
+
+    <p class="syarat">* Bonus hanya berlaku 1x untuk member baru</p>
+  </section>
+
+  <section class="history">
+    <h3>🏆 Aktivitas Bonus Terbaru</h3>
+    <div class="history-list" id="historyList"></div>
+  </section>
+
+  <a href="https://rinjanipuncak.com" target="_blank" class="cs-btn">
+    Hubungi Customer Service
+  </a>
+
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <div class="badge">SELAMAT 🎉</div>
+    <p id="popupUser" class="popup-user"></p>
+    <p class="popup-text">Anda mendapatkan bonus:</p>
+    <h2 id="popupPrize"></h2>
+    <p class="popup-time" id="popupTime"></p>
+    <button onclick="closePopup()">Tutup</button>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
