@@ -1,54 +1,54 @@
-const historyList = document.getElementById("historyList");
 const claimBtn = document.getElementById("claimBtn");
-const popup = document.getElementById("popup");
-const popupPrize = document.getElementById("popupPrize");
-const popupUser = document.getElementById("popupUser");
-const popupTime = document.getElementById("popupTime");
+const csBtn = document.getElementById("csBtn");
+const userIdInput = document.getElementById("userId");
+const infoMessage = document.getElementById("infoMessage");
+const bonusBox = document.getElementById("bonusBox");
+const bonusAmount = document.getElementById("bonusAmount");
+const historyList = document.getElementById("historyList");
 
-// Background Angpao
-const scene = document.getElementById("scene");
-setInterval(() => {
-  const el = document.createElement("div");
-  el.className = "bg-angpao";
-  el.innerText = "🧧";
-  el.style.left = Math.random() * 100 + "%";
-  el.style.animationDuration = 5 + Math.random() * 5 + "s";
-  scene.appendChild(el);
-  setTimeout(() => el.remove(), 10000);
-}, 500);
+const BONUS_OPTIONS = [50000, 75000, 100000, 150000];
+const STORAGE_KEY = "rinjani4d_claimed_users";
 
-// Generate History
-function maskUser() {
-  return "USER***" + Math.floor(10 + Math.random() * 90);
+let claimedUsers = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+// history (scrollable)
+function loadHistory() {
+  historyList.innerHTML = "";
+  for (let i = 0; i < 15; i++) {
+    const li = document.createElement("li");
+    const bonus = BONUS_OPTIONS[Math.floor(Math.random() * BONUS_OPTIONS.length)];
+    li.textContent = `USER***${Math.floor(Math.random() * 90 + 10)} — Freebet Rp ${bonus.toLocaleString("id-ID")}`;
+    historyList.appendChild(li);
+  }
 }
+loadHistory();
 
-function randomPrize() {
-  return "Rp " + (50000 + Math.floor(Math.random() * 10) * 50000).toLocaleString("id-ID");
-}
+claimBtn.addEventListener("click", () => {
+  const userId = userIdInput.value.trim();
+  infoMessage.style.color = "#ff6b6b";
+  bonusBox.classList.add("hidden");
 
-for (let i = 0; i < 20; i++) {
-  const div = document.createElement("div");
-  div.className = "history-item";
-  div.innerText = `${maskUser()} mendapatkan ${randomPrize()}`;
-  historyList.appendChild(div);
-}
+  if (!userId) {
+    infoMessage.textContent = "User ID wajib diisi.";
+    return;
+  }
 
-// Claim Logic
-claimBtn.onclick = () => {
-  claimBtn.innerText = "Memeriksa data...";
-  claimBtn.disabled = true;
+  if (claimedUsers.includes(userId)) {
+    infoMessage.textContent = "Bonus sudah pernah diklaim untuk User ID ini.";
+    return;
+  }
 
-  setTimeout(() => {
-    const prize = randomPrize();
-    popupPrize.innerText = prize;
-    popupUser.innerText = maskUser();
-    popupTime.innerText = "Waktu klaim: " + new Date().toLocaleString("id-ID");
-    popup.style.display = "flex";
-    claimBtn.innerText = "Cek Bonus";
-    claimBtn.disabled = false;
-  }, 1200);
-};
+  const bonus = BONUS_OPTIONS[Math.floor(Math.random() * BONUS_OPTIONS.length)];
+  bonusAmount.textContent = `Freebet Rp ${bonus.toLocaleString("id-ID")}`;
 
-function closePopup() {
-  popup.style.display = "none";
-}
+  claimedUsers.push(userId);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(claimedUsers));
+
+  infoMessage.style.color = "#7CFC98";
+  infoMessage.textContent = "Bonus tersedia untuk akun ini.";
+  bonusBox.classList.remove("hidden");
+});
+
+csBtn.addEventListener("click", () => {
+  window.location.href = "https://rinjanipuncak.com";
+});
