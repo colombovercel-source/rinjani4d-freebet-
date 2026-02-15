@@ -11,7 +11,7 @@ const STORAGE_KEY = "rinjani4d_claimed_users";
 
 let claimedUsers = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-// history (lebih dari 5, tapi di-scroll)
+// history (scrollable)
 function loadHistory() {
   historyList.innerHTML = "";
   for (let i = 0; i < 15; i++) {
@@ -25,7 +25,7 @@ loadHistory();
 
 claimBtn.addEventListener("click", () => {
   const userId = userIdInput.value.trim();
-  infoMessage.style.color = "#b00000";
+  infoMessage.style.color = "#ff6b6b";
   bonusBox.classList.add("hidden");
 
   if (!userId) {
@@ -44,7 +44,7 @@ claimBtn.addEventListener("click", () => {
   claimedUsers.push(userId);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(claimedUsers));
 
-  infoMessage.style.color = "#2e7d32";
+  infoMessage.style.color = "#7CFC98";
   infoMessage.textContent = "Bonus tersedia untuk akun ini.";
   bonusBox.classList.remove("hidden");
 });
