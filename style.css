@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f4f7;
+  color: #222;
+}
+
+.app {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+.card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+button {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 6px;
+  background: #9b1c1c;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7f1616;
+}
+
+#infoMessage {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none;
+}
+
+.bonus-amount {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.note {
+  font-size: 12px;
+  color: #555;
+}
+
+.history {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.history h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history li {
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
