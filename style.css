@@ -6,7 +6,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #d4af37, #fff2b3);
+  background: #121212;
   color: #ffffff;
 }
 
@@ -18,28 +18,27 @@ body {
 
 .header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .header h1 {
   margin: 0;
   font-size: 22px;
-  letter-spacing: 1px;
-  color: #ffffff;
+  letter-spacing: 1.5px;
+  color: #D4AF37;
 }
 
 .header p {
   margin-top: 6px;
   font-size: 13px;
-  color: #fff9d6;
+  color: #B0B0B0;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.95);
-  color: #333;
+  background: #1c1c1c;
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: 1px solid #2a2a2a;
   margin-bottom: 16px;
 }
 
@@ -47,15 +46,21 @@ label {
   font-size: 13px;
   margin-bottom: 6px;
   display: block;
-  color: #444;
+  color: #E6C36A;
 }
 
 input {
   width: 100%;
   padding: 10px;
   border-radius: 6px;
-  border: 1px solid #d4af37;
+  border: 1px solid #333;
+  background: #121212;
+  color: #fff;
   margin-bottom: 12px;
+}
+
+input::placeholder {
+  color: #777;
 }
 
 button {
@@ -63,7 +68,7 @@ button {
   padding: 11px;
   border: none;
   border-radius: 6px;
-  background: linear-gradient(135deg, #d4af37, #f1d27a);
+  background: linear-gradient(135deg, #D4AF37, #E6C36A);
   color: #000;
   font-size: 14px;
   font-weight: bold;
@@ -86,38 +91,39 @@ button:hover {
 .bonus-amount {
   font-size: 18px;
   font-weight: bold;
-  color: #b8860b;
+  color: #D4AF37;
   margin: 10px 0;
 }
 
 .note {
   font-size: 12px;
-  color: #666;
+  color: #aaa;
 }
 
 .history {
-  background: rgba(255,255,255,0.95);
-  color: #333;
+  background: #1c1c1c;
   border-radius: 12px;
+  border: 1px solid #2a2a2a;
   padding: 14px;
 }
 
 .history h4 {
   font-size: 14px;
   margin-bottom: 10px;
-  color: #b8860b;
+  color: #E6C36A;
 }
 
 .history ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 150px; /* ± 5 item */
+  max-height: 150px; /* ± 5 item terlihat */
   overflow-y: auto;
 }
 
 .history li {
   font-size: 12px;
   padding: 6px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #2a2a2a;
+  color: #ddd;
 }
