@@ -1,129 +1,180 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: #121212;
-  color: #ffffff;
+  background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+  color: #fff;
+  overflow-x: hidden;
 }
 
+/* Background Angpao */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.bg-angpao {
+  position: absolute;
+  font-size: 32px;
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}
+
+/* Layout */
 .app {
   max-width: 420px;
-  margin: 40px auto;
+  margin: auto;
   padding: 16px;
 }
 
-.header {
+header {
   text-align: center;
-  margin-bottom: 26px;
 }
 
-.header h1 {
-  margin: 0;
+header h1 {
   font-size: 22px;
-  letter-spacing: 1.5px;
-  color: #D4AF37;
+  color: gold;
 }
 
-.header p {
-  margin-top: 6px;
-  font-size: 13px;
-  color: #B0B0B0;
+.status {
+  font-size: 12px;
+  color: #b7ffb7;
 }
 
+/* Card */
 .card {
-  background: #1c1c1c;
+  background: #141414;
+  border-radius: 14px;
   padding: 16px;
-  border-radius: 12px;
-  border: 1px solid #2a2a2a;
-  margin-bottom: 16px;
-}
-
-label {
-  font-size: 13px;
-  margin-bottom: 6px;
-  display: block;
-  color: #E6C36A;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
+  margin-top: 16px;
   border: 1px solid #333;
-  background: #121212;
-  color: #fff;
-  margin-bottom: 12px;
 }
 
-input::placeholder {
-  color: #777;
+.card h2 {
+  color: #ffd700;
 }
 
+.desc {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Angpao */
+.angpao-box {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.angpao {
+  width: 120px;
+  height: 160px;
+  background: linear-gradient(145deg, #ff0000, #b30000);
+  border-radius: 12px;
+  position: relative;
+}
+
+.angpao::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: gold;
+  border-radius: 50%;
+  top: 55px;
+  left: 35px;
+}
+
+/* Button */
 button {
   width: 100%;
-  padding: 11px;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #D4AF37, #E6C36A);
-  color: #000;
-  font-size: 14px;
+  background: linear-gradient(135deg, gold, #c9a300);
   font-weight: bold;
   cursor: pointer;
 }
 
-button:hover {
-  opacity: 0.9;
-}
-
-#infoMessage {
-  margin-top: 10px;
-  font-size: 13px;
-}
-
-.hidden {
-  display: none;
-}
-
-.bonus-amount {
-  font-size: 18px;
-  font-weight: bold;
-  color: #D4AF37;
-  margin: 10px 0;
-}
-
-.note {
-  font-size: 12px;
+.syarat {
+  font-size: 11px;
   color: #aaa;
+  margin-top: 8px;
 }
 
+/* History */
 .history {
-  background: #1c1c1c;
-  border-radius: 12px;
-  border: 1px solid #2a2a2a;
-  padding: 14px;
+  margin-top: 20px;
 }
 
-.history h4 {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #E6C36A;
-}
-
-.history ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 150px; /* ± 5 item terlihat */
+.history-list {
+  max-height: 120px;
   overflow-y: auto;
 }
 
-.history li {
-  font-size: 12px;
+.history-item {
+  font-size: 13px;
   padding: 6px 0;
-  border-bottom: 1px solid #2a2a2a;
-  color: #ddd;
+  border-bottom: 1px solid #222;
+}
+
+/* CS */
+.cs-btn {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  padding: 12px;
+  background: #900;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #b30000;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  width: 90%;
+}
+
+.badge {
+  background: red;
+  color: white;
+  padding: 6px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.popup-user {
+  background: white;
+  color: black;
+  margin: 10px auto;
+  padding: 6px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.popup-time {
+  font-size: 12px;
+  opacity: 0.9;
 }
